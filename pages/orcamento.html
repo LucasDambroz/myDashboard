@@ -181,7 +181,7 @@
                                 </a>
                               </li>
                               <li class="nav-item">
-                                <a href="../pages/alunos.html" class="nav-link active">
+                                <a href="../pages/alunos.html" class="nav-link">
                                   <i class="fas fa-user-graduate"></i>                               
                                    <p>
                                     Alunos
@@ -189,7 +189,7 @@
                                 </a>
                               </li>
                               <li class="nav-item">
-                                <a href="../pages/orcamento.html" class="nav-link">
+                                <a href="../pages/orcamento.html" class="nav-link active">
                                   <i class="fas fa-dollar-sign"></i>                    
                                   <p>
                                     Orçamento
@@ -224,7 +224,7 @@
                           <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                               <li class="breadcrumb-item"><a href="#">Home</a></li>
-                              <li class="breadcrumb-item active">Alunos</li>
+                              <li class="breadcrumb-item active">Orçamento Escolar</li>
                             </ol>
                           </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -235,129 +235,149 @@
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="card-title">Cadastrar aluno</h3>
-
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <!-- /.card-tools -->
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <form id="formAdicionarAluno">
-                                        <div class="row">
-
-                                            <div class="col-sm-12 col-md-4 col-lg-5">
-                                                <div class="form-group">
-                                                    <label for="nomeAluno">Nome do aluno</label>
-                                                    <input id="nomeAluno" type="text" class="form-control" required>
-                                                </div>
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card card-primary">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Orçamento prévio de material escolar</h3>
+        
+                                            <div class="card-tools">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                                        class="fas fa-minus"></i>
+                                                </button>
                                             </div>
-                                            <div class="col-sm-12 col-md-2 col-lg-1">
-                                                <div class="form-group">
-                                                    <label for="primeiroBi">1º Bimestre</label>
-                                                    <input id="primeiroBi" type="number" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-2 col-lg-1">
-                                                <div class="form-group">
-                                                    <label for="segundoBi">2º Bimestre</label>
-                                                    <input id="segundoBi" type="number" class="form-control" required>
-                                                </div>
-                                            </div>
-                                           <div class="col-sm-12 col-md-2 col-lg-1">
-                                                <div class="form-group">
-                                                    <label for="terceiroBi">3º Bimestre</label>
-                                                    <input id="terceiroBi" type="number" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-2 col-lg-1">
-                                                <div class="form-group">
-                                                    <label for="quartoBi">4º Bimestre</label>
-                                                    <input id="quartoBi" type="number" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                                <div class="form-group pt-24">
-                                                    <button type="button" class="btn btn-primary"
-                                                        onclick="adicionarAluno()">
-                                                        <i class="fas fa-plus"></i> Adicionar
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <!-- /.card-tools -->
                                         </div>
-                                    </form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="card-body table-responsive p-0">
-                                                <table id="listagemAlunos" class="table table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Aluno</th>
-                                                            <th>1Bimestre</th>
-                                                            <th>2Bimestre</th>
-                                                            <th>3Bimestre</th>
-                                                            <th>4Bimestre</th>
-                                                            <th>Total</th>
-                                                            <th>Média</th>
-                                                            <th>Situação</th>
-                                                            <th>Ações</th>
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <form id="formOrcamentoEscolar">
+                                                <div class="row">
+        
+                                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                                        <div class="form-group">
+                                                            <label for="nomeAluno">Nome do aluno</label>
+                                                            <input id="nomeAluno" type="text" class="form-control" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                                                            <label for="gastarMaximoPreco">Posso gastar até:</label>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" id="gastarMaximoPreco"><a><i
+                                                                                class="fas fa-dollar-sign"></i></a></span>
+                                                                </div>
+                                                                <input type="text" class="form-control" aria-label="gastarMaximoPreco"
+                                                                    aria-describedby="gastarMaximoPreco">
+                                                            </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-3 col-lg-2">
+                                                        <div class="form-group">
+                                                            <label for="materialEscolar">Material Escolar</label>
+                                                            <select id="materialEscolar" class="form-control"  required>
+                                                                    <option>---------</option>
+                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                   <div class="col-sm-12 col-md-3 col-lg-2">
+                                                        <div class="form-group">
+                                                            <label for="quantidadeMateriais">Quantidade</label>
+                                                            <input id="quantidadeMateriais" type="number" class="form-control" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-sm-12 col-md-4 col-lg-2">
+                                                            <label for="precoUnitario">Preço Unitário</label>
+                                                            <div class="input-group mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" id="precoUnitario"><a><i
+                                                                                class="fas fa-dollar-sign"></i></a></span>
+                                                                </div>
+                                                                <input type="text" class="form-control" aria-label="precoUnitario"
+                                                                    aria-describedby="precoUnitario">
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-3 col-lg-2">
+                                                        <div class="form-group pt-31">
+                                                            <button type="button" class="btn btn-primary"
+                                                                onclick="">
+                                                                <i class="fas fa-plus"></i> Adicionar
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+
+                                                        <h2 class="mg-31">
+                                                            <i class="fas fa-list-ul"> Lista de Materiais do aluno:</i>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="row mg-15">
+                                                        <div class="col-sm-9">
+                                                            <div class="card-body table-responsive p-0">
+                                                                <table id="materiaisEscolhidos" class="table table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Material</th>
+                                                                            <th>Quantidade</th>
+                                                                            <th>Valor unitário</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                                <!-- small card -->
+                                                                <div class="small-box bg-gradient-green">
+                                                                    <div class="inner">
+                                                                        <h3>150</h3>
+                        
+                                                                        <p>New Orders</p>
+                                                                    </div>
+                                                                    <div class="icon">
+                                                                        <i class="fas fa-shopping-cart"></i>
+                                                                    </div>
+                                                                    <a href="#" class="small-box-footer">
+                                                                        More info <i class="fas fa-arrow-circle-right"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                            </form>
                                         </div>
+                                        <!-- /.card-body -->
                                     </div>
                                 </div>
-                                <!-- /.card-body -->
+        
                             </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                          <table id="contagemAlunos">
-                            <thead>
-                              <tr>
-                                <th>Total de alunos: </th>
-                              </tr>
-                            </thead>
-                          </table>
-                      </div>
-                    </div>
-                </div>
+                </div><!-- /.container-fluid -->
+              </div>
+              <!-- /.content -->
             </div>
-        </div>
-        <!-- #endregion /.content-wrapper -->
-
-        <!-- #region Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
+            <!--#endregion-->
+          
+            <!-- #region Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+              <!-- Control sidebar content goes here -->
+              <div class="p-3">
                 <h5>Title</h5>
                 <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- #endregion /.control-sidebar -->
-
-        <!-- #region Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="float-right d-none d-sm-inline">
+              </div>
+            </aside>
+            <!--#endregion-->
+          
+            <!-- #region Footer -->
+            <footer class="main-footer">
+              <!-- To the right -->
+              <div class="float-right d-none d-sm-inline">
                 Anything you want
-            </div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-            reserved.
-        </footer>
-        <!--#endregion -->
-    </div>
+              </div>
+              <!-- Default to the left -->
+              <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            </footer>
+          </div>
+            <!--#endregion-->
 
 
     <!--#region Scripts Requeridos -->
@@ -370,6 +390,7 @@
     <script src="../assets/js/adminlte.min.js"></script>
     <script src="../assets/js/jquery.validate.js"></script>
     <script src="../assets/js/toastr.min.js"></script>
+    <script src="../assets/js/orcamento.js"></script>
     <script src="../assets/js/alunos.js"></script>
     <!--#endregion-->
 </body>
