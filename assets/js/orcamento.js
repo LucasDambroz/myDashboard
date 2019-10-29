@@ -6,3 +6,8 @@ arrayMateriais.forEach((material) => {
     option = new Option(material, material.toLowerCase());
     materialEscolar.options[materialEscolar.options.length] = option;
   });
+
+function desabilitarBotao(){
+  
+    
+}
